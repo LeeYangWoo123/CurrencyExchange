@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실시간 환율 계산기</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">💱 Currency Exchange</div>
+        <nav class="nav-menu">
+            <a href="{{ url_for('home') }}" class="{% if active == 'to-krw' %}active{% endif %}">외화→원화 환산</a>
+            <a href="{{ url_for('from_krw') }}" class="{% if active == 'from-krw' %}active{% endif %}">원화→외화 환산</a>
+            <!-- 필요하면 다른 메뉴도 추가 -->
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

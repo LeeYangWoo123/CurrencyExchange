@@ -1,0 +1,240 @@
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  background: #f8fafc;
+  color: #222;
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.header {
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
+  letter-spacing: 2px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.nav-menu a {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  border-radius: 2rem;
+  background: #e0f7fa;
+  color: #00897b;
+  font-size: 1.07rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: 
+    background 0.2s, 
+    color 0.2s, 
+    border 0.2s, 
+    box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,191,174,0.07);
+  letter-spacing: 0.5px;
+}
+
+.nav-menu a:hover, .nav-menu a:focus {
+  background: #00bfae;
+  color: #fff;
+  border: 2px solid #00bfae;
+  box-shadow: 0 4px 16px rgba(0,191,174,0.15);
+  text-decoration: none;
+}
+
+/* 활성화 탭 표시 (Jinja2에서 active 클래스 추가 필요) */
+.nav-menu a.active {
+  background: linear-gradient(90deg,#00bfae 0%, #00c9b7 100%);
+  color: #fff;
+  border: 2px solid #00bfae;
+  box-shadow: 0 4px 16px rgba(0,191,174,0.15);
+}
+
+.container.split {
+  display: flex;
+  flex-direction: row; /* 가로 배치 */
+  min-height: 90vh;
+  gap: 0;
+}
+
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #e0f7fa 0%, #fff 100%);
+  padding: 3rem 2rem 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #00897b;
+}
+
+.left-panel p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.left-panel ul {
+  margin: 0 0 2rem 1rem;
+  padding: 0;
+  list-style: disc;
+  color: #00796b;
+  font-size: 1.05rem;
+}
+
+.left-panel img {
+  display: block;
+  margin: 2rem auto 0 auto;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,191,174,0.08);
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  align-items: flex-start; /* 카드를 위쪽 정렬 */
+  justify-content: center;
+  background: #f1f5f9;
+  min-height: 100vh;
+}
+
+.card.calculator {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.09);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: box-shadow 0.2s;
+  transform: translateY(5rem); /* 카드만 위로 올리기 */
+}
+
+.card.calculator:hover {
+  box-shadow: 0 8px 40px rgba(0,191,174,0.13);
+}
+
+.card.calculator h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #00bfae;
+  letter-spacing: -1px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #00897b;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+input, select, button {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+  padding: 0.75rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 7px;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  background: #fafdff;
+}
+
+input:focus, select:focus {
+  border: 1.5px solid #00bfae;
+  box-shadow: 0 0 0 2px #e0f7fa;
+}
+
+button {
+  background: linear-gradient(90deg,#00bfae 0%, #00c9b7 100%);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.9rem;
+  border-radius: 7px;
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(0,191,174,0.07);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover, button:focus {
+  background: linear-gradient(90deg,#00897b 0%, #00bfae 100%);
+  box-shadow: 0 4px 16px rgba(0,191,174,0.15);
+}
+
+.result {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  color: #00796b;
+  background: #e0f7fa;
+  border-radius: 7px;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.error {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  color: #d32f2f;
+  background: #fff3f3;
+  border-radius: 7px;
+  padding: 0.9rem 1.2rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1100px) {
+  .container.split { flex-direction: column; }
+  .left-panel, .right-panel { flex: none; width: 100%; min-height: unset; }
+  .left-panel { padding: 2.5rem 1.2rem 2.5rem 1.2rem; }
+}
+
+@media (max-width: 600px) {
+  .header { flex-direction: column; padding: 0.7rem 1rem; }
+  .left-panel { padding: 1.2rem 0.7rem; }
+  .card.calculator { padding: 1.4rem 0.7rem; min-width: unset; max-width: 100%; }
+  .result, .error { padding: 0.7rem 0.5rem; font-size: 1rem; }
+  label, input, select, button { font-size: 0.98rem; }
+}
